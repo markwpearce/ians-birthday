@@ -1,0 +1,41 @@
+
+$characterPngSize: 350px;
+
+@mixin imgScale($size) {
+  &.flip {
+    transform: scaleX(-1);
+  }
+
+  height: $characterPngSize * $size;
+  width: auto;
+}
+
+
+.xsmall {
+  @include imgScale(0.22);
+}
+
+.small {
+  @include imgScale(0.33);
+}
+
+.medium {
+  @include imgScale(0.66);
+}
+
+.large {
+  @include imgScale(1);
+}
+
+.xlarge {
+  @include imgScale(1.5);
+}
+
+.faded {
+  filter: contrast(10%) brightness(75%);
+  opacity: 0.5;
+}
+
+.character-img {
+  display: inline;
+}

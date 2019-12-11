@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Bangers|Lilita+One|Luckiest+Guy|Open+Sans|Roboto&display=swap');
+
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.lilita {
+  font-family: "Lilita One", sans-serif;
+}
+
+.luckiest-guy {
+  font-family: "Luckiest Guy", cursive;
+}
+
+
+.bangers {
+  font-family: "Bangers", cursive;
+}
+
+.title-effect {
+  color: rgba(252, 220, 42, 0.986);
+  -webkit-text-stroke: 1px  #222;
+  text-shadow: 0.5vmin 0.5vmin 0 rgb(204, 138, 14), -0.5vmin -0.5vmin 0 rgb(168, 26, 18);
+}
+
+
+
+

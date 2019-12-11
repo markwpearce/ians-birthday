@@ -1,0 +1,9 @@
+node_modules
+scripts
+server
+/*.*
+/**/*.css
+/**/*.scss
+/**/*.html
+/**/*.json
+/**/*.md

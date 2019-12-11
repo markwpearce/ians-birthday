@@ -1,0 +1,32 @@
+@import '../../styles.scss';
+
+$rotationAmt: 0;
+
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  overflow: hidden;
+  background-image: radial-gradient(circle, #333333, #222222)
+}
+
+.title-container {
+  flex: 1;
+  display: flex;
+
+  h1 {
+    transform: skew(#{$rotationAmt}deg) rotate(#{$rotationAmt}deg);
+    grid-area: text;
+    font-size: 10vmin;
+    margin: 0;
+    padding: 2vmin;
+    align-self: center;
+    white-space: nowrap;
+  }
+}
+
+
+.progress-container {
+
+  padding: 1vmin;
+}
