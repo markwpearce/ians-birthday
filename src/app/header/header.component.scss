@@ -7,7 +7,10 @@ $rotationAmt: 0;
   flex-wrap: wrap;
   margin: 0;
   overflow: hidden;
-  background-image: radial-gradient(circle, #333333, #222222)
+  background-image: radial-gradient(circle, #333333, #222222);
+  padding-right: 1vmin;
+  padding-left: 1vmin;
+
 }
 
 .title-container {
@@ -17,9 +20,9 @@ $rotationAmt: 0;
   h1 {
     transform: skew(#{$rotationAmt}deg) rotate(#{$rotationAmt}deg);
     grid-area: text;
-    font-size: 10vmin;
+    font-size: 12vmin;
     margin: 0;
-    padding: 2vmin;
+    padding: 1vmin;
     align-self: center;
     white-space: nowrap;
   }
