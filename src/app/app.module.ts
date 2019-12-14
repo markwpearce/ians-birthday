@@ -8,6 +8,10 @@ import { HeaderComponent } from './header/header.component';
 import { PuzzleHeaderComponent } from './puzzle-header/puzzle-header.component';
 import { CharacterImgComponent } from './character-img/character-img.component';
 import { PuzzleProgressComponent } from './puzzle-progress/puzzle-progress.component';
+import { PuzzleStartComponent } from './puzzle-start/puzzle-start.component';
+import { NextButtonComponent } from './next-button/next-button.component';
+import { SceneImgComponent } from './scene-img/scene-img.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -16,15 +20,15 @@ import { PuzzleProgressComponent } from './puzzle-progress/puzzle-progress.compo
     HeaderComponent,
     PuzzleHeaderComponent,
     CharacterImgComponent,
-    PuzzleProgressComponent
+    PuzzleProgressComponent,
+    PuzzleStartComponent,
+    NextButtonComponent,
+    SceneImgComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, CommonModule],
   providers: [],
   bootstrap: [AppComponent],
   exports: [PuzzleAComponent],
   entryComponents: [PuzzleAComponent]
 })
-export class AppModule { }
+export class AppModule {}

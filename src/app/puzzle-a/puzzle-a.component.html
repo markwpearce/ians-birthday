@@ -1,6 +1,21 @@
-<app-character-img name="geronimo" size="xsmall"></app-character-img>
-<app-character-img name="geronimo" size="small"></app-character-img>
-<app-character-img name="geronimo" size="medium"></app-character-img>
-<app-character-img name="geronimo" size="large"></app-character-img>
-<app-character-img name="geronimo" flip="true"></app-character-img>
-<app-character-img name="geronimo" faded="true"></app-character-img>
+<div class="scene">
+  <app-scene-img name="office"></app-scene-img>
+</div>
+<div class="puzzle" *ngIf="stage == 0">
+  <div class="instructions">
+    <p>What are the directions Thea should use for the Metamouse?</p>
+    <p class="small">Directions are based on jumping from building to building with the shortest distance based on the number on the map. For example, going from The Mouse House Restaurant (28) to Botanical Gardens (19), the directions are 28, 27, 19.</p>
+  </div>
+  <input class="puzzle-input" #directions  (keyup.enter)="testInput(directions.value)">
+
+  <app-next-button (click)="testInput(directions.value)" ></app-next-button>
+</div>
+<div class="puzzle" *ngIf="stage == 1">
+  <div class="instructions">
+    <p>Next Puzzle Location:  Behind a picture somewhere in the house</p>
+    <p>What is the next code?</p>
+  </div>
+  <input class="puzzle-input" #code  (keyup.enter)="testCode(code.value)">
+
+  <app-next-button (click)="testCode(code.value)"></app-next-button>
+</div>

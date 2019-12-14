@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PuzzleStateService, PuzzleDetail } from '../services/puzzle-state.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-puzzle-header',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./puzzle-header.component.scss']
 })
 export class PuzzleHeaderComponent implements OnInit {
+  currentPuzzle$: Observable<PuzzleDetail>;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private puzzleStateService: PuzzleStateService) {
+    this.currentPuzzle$ = this.puzzleStateService.currentPuzzle$;
   }
 
+  ngOnInit() {}
 }

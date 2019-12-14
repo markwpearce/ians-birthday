@@ -1,15 +1,13 @@
 @import '../../styles.scss';
 
-$rotationAmt: 0;
-
 :host {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
   overflow: hidden;
   background-image: radial-gradient(circle, #333333, #222222);
-  padding-right: 1vmin;
-  padding-left: 1vmin;
+  padding-right: 3vmin;
+  padding-left: 3vmin;
 
 }
 
@@ -18,7 +16,6 @@ $rotationAmt: 0;
   display: flex;
 
   h1 {
-    transform: skew(#{$rotationAmt}deg) rotate(#{$rotationAmt}deg);
     grid-area: text;
     font-size: 12vmin;
     margin: 0;

@@ -1,0 +1,12 @@
+.title-container {
+  flex: 1;
+  display: flex;
+  min-height: 10vmin;
+  h1 {
+    grid-area: text;
+    font-size: 8vmin;
+    margin: 1vmin;
+    align-self: center;
+    white-space: nowrap;
+  }
+}

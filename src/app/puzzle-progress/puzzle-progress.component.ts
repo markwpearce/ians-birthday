@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PuzzleStateService } from '../services/puzzle-state.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-puzzle-progress',

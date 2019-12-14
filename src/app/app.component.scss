@@ -4,12 +4,42 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
-}
-
-app-header {
+  background-image: url("/assets/new-mouse-city.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
 
 }
 
 .puzzle-container {
-  flex: 1;
+  flex: 1 1 auto;
+  background-image: radial-gradient(circle,  rgba(115, 189, 115, 0.75), rgba(54, 159, 53, 0.95));
+  overflow-x: auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.signal-icon {
+  font-size: 80vmin;
+  color: red;
+  -webkit-text-stroke: 2px  #222;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -60vmin;
+  margin-left: -40vmin;
+
+  &.hide {
+    display: none;
+  }
+}
+
+.wrong {
+  color: red;
+}
+
+.correct {
+  color: greenyellow;
 }

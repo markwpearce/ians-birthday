@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Bangers|Lilita+One|Luckiest+Guy|Open+Sans|Roboto&display=swap');
-
+@import '@fortawesome/fontawesome-free/css/all.css';
 
 body {
   margin: 0;
@@ -21,12 +21,79 @@ body {
   font-family: "Bangers", cursive;
 }
 
+$titleColor: rgba(252, 220, 42, 0.986);
+
+.title-color {
+  color: $titleColor;
+  -webkit-text-stroke: 2px  #222;
+
+}
+
 .title-effect {
-  color: rgba(252, 220, 42, 0.986);
-  -webkit-text-stroke: 1px  #222;
+  @extend .title-color;
   text-shadow: 0.5vmin 0.5vmin 0 rgb(204, 138, 14), -0.5vmin -0.5vmin 0 rgb(168, 26, 18);
 }
 
+.basic-puzzle-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  justify-content: space-around;
+
+  padding: 5vmin;
+
+  .scene {
+    flex: 3;
+    margin: 1vmin 3vmin;
+  }
+  .puzzle {
+    margin: 1vmin 3vmin;
+
+    flex: 4;
+    min-width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+$textBkgrnd: rgba(200,200,200,0.8);
+
+.instructions {
+  padding: 0.75rem;
+  font-size: 2rem;
+  background-color: $textBkgrnd;
+  border-radius: 0.25rem;
+  max-width: 80vw;
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+  p.small {
+    font-size: 1.5rem;
+  }
 
 
+}
 
+$inputBkgrnd: rgba(220,220,220,0.95);
+
+
+input.puzzle-input {
+  font-size: 2rem;
+  padding: 12px 20px;
+  margin: 1rem 0;
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+  border: 2px solid  #222;
+  background: $inputBkgrnd;
+  width: 80%;
+
+  &:focus {
+    background: white;
+    border-color: $titleColor;
+  }
+}

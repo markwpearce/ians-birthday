@@ -1,4 +1,12 @@
 <app-header></app-header>
 <div class="puzzle-container">
+  <app-puzzle-header></app-puzzle-header>
   <router-outlet></router-outlet>
+</div>
+<div class="wrong signal-icon" [ngClass]="{'hide': hideWrongAnswer}">
+  <i class="far fa-times-circle fa-12x"></i>
+</div>
+
+<div class="correct signal-icon" [ngClass]="{'hide': hideRightAnswer}">
+    <i class="far fa-check-circle fa-12x"></i>
 </div>

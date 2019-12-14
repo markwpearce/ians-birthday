@@ -6,7 +6,7 @@ $characterPngSize: 350px;
     transform: scaleX(-1);
   }
 
-  height: $characterPngSize * $size;
+  max-height: $characterPngSize * $size;
   width: auto;
 }
 
