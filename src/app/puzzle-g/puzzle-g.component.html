@@ -1,0 +1,40 @@
+<div class="scene" *ngIf="stage == 0">
+   <app-scene-img  name="geronimo-and-crunchrat"></app-scene-img>
+</div>
+<div class="puzzle" *ngIf="stage == 0">
+  <app-next-button (click)="nextStage()" ></app-next-button>
+</div>
+<div class="scene" *ngIf="stage == 1">
+    <app-scene-img  name="ben-pad-max"></app-scene-img>
+ </div>
+ <div class="puzzle" *ngIf="stage == 1">
+   <app-next-button (click)="nextStage()" ></app-next-button>
+ </div>
+ <div class="scene" *ngIf="stage == 2 || stage ==3">
+    <app-robot-maze #maze (programResult)="mazeResult($event)"></app-robot-maze>
+ </div>
+ <div class="puzzle" *ngIf="stage == 2">
+    <div class="instructions">
+        <p>Program the robot so it can reach the painting. You can give it three kinds of commands:</p>
+           <ul><li>Go forward a number of squares (represented by a number)</li>
+            <li>Quarter Turn left (L)</li>
+            <li>Quarter Turn right (R)</li>
+           </ul>
+           <p class="small">For example, to go go forward 5, turn right, then go forward two, the program would be: “5, R, 2”</p>
+      </div>
+
+      <input class="puzzle-input" #directions  (keyup.enter)="testInput(directions.value)">
+
+      <app-next-button (click)="testInput(directions.value)" ></app-next-button>
+</div>
+<div class="puzzle" *ngIf="stage == 3">
+    <div class="instructions">
+      <p>Next Puzzle Location: In a room you build in</p>
+      <p>What is the next code?</p>
+    </div>
+    <input class="puzzle-input" #code  (keyup.enter)="testCode(code.value)">
+
+    <app-next-button (click)="testCode(code.value)"></app-next-button>
+  </div>
+
+

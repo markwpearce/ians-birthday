@@ -1,0 +1,25 @@
+<div class="scene">
+    <app-scene-img name="museum-interior"></app-scene-img>
+  </div>
+  <div class="puzzle" *ngIf="stage == 0">
+
+      <app-next-button (click)="testInput(directions.value)" ></app-next-button>
+    </div>
+  <div class="puzzle" *ngIf="stage == 1">
+    <div class="instructions">
+      <p>What are the directions Thea should use for the Metamouse?</p>
+      <p class="small">Use the map to find the directions to Grandfather William’s house</p>
+    </div>
+    <input class="puzzle-input" #directions  (keyup.enter)="testInput(directions.value)">
+
+    <app-next-button (click)="testInput(directions.value)" ></app-next-button>
+  </div>
+  <div class="puzzle" *ngIf="stage == 2">
+    <div class="instructions">
+      <p>Next Puzzle Location:  Under a chair</p>
+      <p>What is the next code?</p>
+    </div>
+    <input class="puzzle-input" #code  (keyup.enter)="testCode(code.value)">
+
+    <app-next-button (click)="testCode(code.value)"></app-next-button>
+  </div>

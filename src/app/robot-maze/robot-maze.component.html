@@ -1,0 +1,10 @@
+<div class="maze-row" *ngFor="let row of maze; let y = index">
+  <div class="maze-cell" *ngFor="let cell of row; let x = index" [ngClass]="{'floor': maze[y][x]==0, 'wall':maze[y][x]==1, 'goal':maze[y][x]==2}">
+    <span *ngIf="maze[y][x]==2">
+      🖼
+    </span>
+    <span *ngIf="robot.x == x && robot.y == y" class="robot turn-{{currentDirection}}">
+        🤖
+    </span>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+
+@import '../../styles.scss';
+
+
+:host {
+  @extend .basic-puzzle-layout;
+}
+h1 {
+  grid-area: text;
+  font-size: 8vmin;
+  margin: 1vmin;
+  align-self: center;
+  white-space: nowrap;
+}

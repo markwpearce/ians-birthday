@@ -12,6 +12,14 @@ import { PuzzleStartComponent } from './puzzle-start/puzzle-start.component';
 import { NextButtonComponent } from './next-button/next-button.component';
 import { SceneImgComponent } from './scene-img/scene-img.component';
 import { CommonModule } from '@angular/common';
+import { PuzzleBComponent } from './puzzle-b/puzzle-b.component';
+import { PuzzleCComponent } from './puzzle-c/puzzle-c.component';
+import { PuzzleDComponent } from './puzzle-d/puzzle-d.component';
+import { PuzzleEComponent } from './puzzle-e/puzzle-e.component';
+import { PuzzleFComponent } from './puzzle-f/puzzle-f.component';
+import { PuzzleGComponent } from './puzzle-g/puzzle-g.component';
+import { PuzzleEndComponent } from './puzzle-end/puzzle-end.component';
+import { RobotMazeComponent } from './robot-maze/robot-maze.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +31,15 @@ import { CommonModule } from '@angular/common';
     PuzzleProgressComponent,
     PuzzleStartComponent,
     NextButtonComponent,
-    SceneImgComponent
+    SceneImgComponent,
+    PuzzleBComponent,
+    PuzzleCComponent,
+    PuzzleDComponent,
+    PuzzleEComponent,
+    PuzzleFComponent,
+    PuzzleGComponent,
+    PuzzleEndComponent,
+    RobotMazeComponent
   ],
   imports: [BrowserModule, AppRoutingModule, CommonModule],
   providers: [],

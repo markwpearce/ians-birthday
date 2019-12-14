@@ -1,0 +1,22 @@
+<div class="scene">
+    <app-scene-img  name="sally"></app-scene-img>
+</div>
+<div class="puzzle" *ngIf="stage == 0">
+    <app-next-button (click)="nextStage()" ></app-next-button>
+  </div>
+<div class="puzzle" *ngIf="stage == 1">
+  <div class="instructions">
+    <p>You have 5 minutes! Everyone needs to put on a costume and make a name tag (with a fake name)! We’ll vote on the best and they’ll get a prize!</p>
+  </div>
+
+  <app-next-button (click)="nextStage()" ></app-next-button>
+</div>
+<div class="puzzle" *ngIf="stage == 2">
+  <div class="instructions">
+    <p>Next Puzzle Location: Front hall closet</p>
+    <p>What is the next code?</p>
+  </div>
+  <input class="puzzle-input" #code  (keyup.enter)="testCode(code.value)">
+
+  <app-next-button (click)="testCode(code.value)"></app-next-button>
+</div>

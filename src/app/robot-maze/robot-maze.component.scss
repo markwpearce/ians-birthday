@@ -1,0 +1,43 @@
+
+:host {
+  background: solid white;
+}
+
+$cellHeight: 6vmin;
+$cellWidth: 8vmin;
+
+
+.maze-row {
+  height: $cellHeight;
+  display: flex;
+  margin: 0;
+  font-size: $cellHeight*0.8;
+  .maze-cell {
+    display: inline-flex;
+    width: $cellWidth;
+    height: $cellHeight;
+    margin:0;
+    border: 2px solid black;
+    background: white;
+    text-align: center;
+    &.floor {
+      background-color: lightgrey;
+    }
+    &.wall {
+      background-color: slategray;
+    }
+    span {
+      &.robot {
+        &.turn-3 {
+          transform: rotate(0.75turn);
+        }
+        &.turn-1  {
+          transform: rotate(0.25turn);
+        }
+        &.turn-2 {
+          transform: rotate(0.5turn);
+        }
+      }
+    }
+  }
+}

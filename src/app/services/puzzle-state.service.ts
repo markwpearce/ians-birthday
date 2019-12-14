@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 export interface PuzzleDetail {
   id: string;
   name: string;
+  code?: string;
 }
 
 @Injectable({
@@ -14,13 +15,13 @@ export interface PuzzleDetail {
 export class PuzzleStateService {
   private puzzles: PuzzleDetail[] = [
     { id: 'start', name: '' },
-    { id: 'a', name: 'Let’s Go To The Mouseum' },
-    { id: 'b', name: 'Cheesy Night' },
-    { id: 'c', name: 'What To Wear?' },
-    { id: 'd', name: 'On The Chase' },
-    { id: 'e', name: 'Heavy Construction' },
-    { id: 'f', name: 'Secret Codes' },
-    { id: 'g', name: 'Trapped' },
+    { id: 'a', name: 'Let’s Go To The Mouseum', code: 'painting' },
+    { id: 'b', name: 'Cheesy Night', code: 'disguise' },
+    { id: 'c', name: 'What To Wear?', code: 'thief' },
+    { id: 'd', name: 'On The Chase', code: 'crane' },
+    { id: 'e', name: 'Heavy Construction', code: 'padlock' },
+    { id: 'f', name: 'Secret Codes', code: 'robot' },
+    { id: 'g', name: 'Trapped', code: 'captured' },
     { id: 'end', name: 'Crunchrat Caught' }
   ];
   private currentPuzzleIdx = 0;
@@ -69,7 +70,7 @@ export class PuzzleStateService {
       this.currentPuzzleIdx++;
       this.router.navigateByUrl(this.activePuzzleId);
     } else {
-      this.router.navigateByUrl('win');
+      this.router.navigateByUrl('end');
     }
   }
 

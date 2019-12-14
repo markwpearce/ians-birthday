@@ -1,0 +1,31 @@
+<div class="scene" *ngIf="stage == 0">
+    <app-scene-img name="museum"></app-scene-img>
+</div>
+<div class="puzzle" *ngIf="stage == 0">
+
+    <app-next-button (click)="testCode(code.value)"></app-next-button>
+  </div>
+<div class="puzzle" *ngIf="stage == 1">
+    <div class="instructions">
+      <p>In 5 minutes, try to make the best copy of Cheesy Night as possible. We’ll vote on the best one and they’ll get a prize!
+        </p>
+    </div>
+    <app-next-button (click)="testCode(code.value)"></app-next-button>
+  </div>
+
+<div class="painting-container" *ngIf="stage == 2">
+  <img class="painting space" src="/assets/cheesy-night.jpg">
+  <app-next-button (click)="nextStage()"></app-next-button>
+</div>
+<div class="scene" *ngIf="stage == 3">
+    <app-scene-img name="museum"></app-scene-img>
+</div>
+<div class="puzzle" *ngIf="stage == 3">
+  <div class="instructions">
+    <p>Next Puzzle Location:  Where you would find real cheese?</p>
+    <p>What is the next code?</p>
+  </div>
+  <input class="puzzle-input" #code  (keyup.enter)="testCode(code.value)">
+
+  <app-next-button (click)="testCode(code.value)"></app-next-button>
+</div>

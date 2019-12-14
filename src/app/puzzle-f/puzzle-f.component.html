@@ -1,21 +1,21 @@
 <div class="scene">
-  <app-scene-img name="office"></app-scene-img>
+    <app-scene-img  name="library"></app-scene-img>
 </div>
 <div class="puzzle" *ngIf="stage == 0">
-    <app-next-button (click)="testInput(directions.value)" ></app-next-button>
+    <app-next-button (click)="nextStage()" ></app-next-button>
   </div>
 <div class="puzzle" *ngIf="stage == 1">
   <div class="instructions">
-    <p>What are the directions Thea should use for the Metamouse?</p>
-    <p class="small">Directions are based on jumping from building to building with the shortest distance based on the number on the map. For example, going from The Mouse House Restaurant (28) to Botanical Gardens (19), the directions are 28, 27, 19.</p>
+    <p>Find the books with the red paw prints. Look for the code papers, and see if you can understand the code. Once you have it, try to open the locked door!</p>
   </div>
+
   <input class="puzzle-input" #directions  (keyup.enter)="testInput(directions.value)">
 
   <app-next-button (click)="testInput(directions.value)" ></app-next-button>
 </div>
 <div class="puzzle" *ngIf="stage == 2">
   <div class="instructions">
-    <p>Next Puzzle Location:  Behind a picture somewhere in the house</p>
+    <p>Next Puzzle Location: In a red room</p>
     <p>What is the next code?</p>
   </div>
   <input class="puzzle-input" #code  (keyup.enter)="testCode(code.value)">
