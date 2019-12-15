@@ -1,24 +1,33 @@
 <div class="scene">
   <app-scene-img name="office"></app-scene-img>
 </div>
-<div class="puzzle" *ngIf="stage == 0">
-    <app-next-button (click)="testInput(directions.value)" ></app-next-button>
+<div class="puzzle puzzle-story" *ngIf="stage == 0">
+  <div class="instructions story" >
+    <markdown [src]="'/assets/story/a-1.md'"></markdown>
   </div>
+  <app-next-button (click)="nextStage()" ></app-next-button>
+</div>
 <div class="puzzle" *ngIf="stage == 1">
   <div class="instructions">
-    <p>What are the directions Thea should use for the Metamouse?</p>
+    <p>What are the directions Thea should use for the Metamouse to get to the museum, and stopping at Thea's house along the way?</p>
     <p class="small">Directions are based on jumping from building to building with the shortest distance based on the number on the map. For example, going from The Mouse House Restaurant (28) to Botanical Gardens (19), the directions are 28, 27, 19.</p>
+    <p class="small"><a href="/assets/printables/new-mouse-city-map.pdf" target="_blank">New Mouse City Map [PDF]</a></p>
   </div>
   <input class="puzzle-input" #directions  (keyup.enter)="testInput(directions.value)">
-
-  <app-next-button (click)="testInput(directions.value)" ></app-next-button>
+  <div>
+    <app-next-button back="true" (click)="prevStage()" ></app-next-button>
+    <app-next-button (click)="testInput(directions.value)" ></app-next-button>
+  </div>
 </div>
 <div class="puzzle" *ngIf="stage == 2">
   <div class="instructions">
-    <p>Next Puzzle Location:  Behind a picture somewhere in the house</p>
-    <p>What is the next code?</p>
+    <p *ngIf="home">Next Puzzle Location: Behind a picture somewhere in the house</p>
+    <p *ngIf="!home">Password for next puzzle: What is the <i>Mozzarella Lisa</i>?</p>
+    <p>What is the password?</p>
   </div>
   <input class="puzzle-input" #code  (keyup.enter)="testCode(code.value)">
-
-  <app-next-button (click)="testCode(code.value)"></app-next-button>
+  <div>
+    <app-next-button back="true" (click)="prevStage()" ></app-next-button>
+    <app-next-button (click)="testCode(code.value)"></app-next-button>
+  </div>
 </div>

@@ -1,22 +1,31 @@
 <div class="scene">
     <app-scene-img  name="metamouse"></app-scene-img>
 </div>
-<div class="puzzle" *ngIf="stage == 0">
-    <app-next-button (click)="nextStage()" ></app-next-button>
+<div class="puzzle puzzle-story" *ngIf="stage == 0">
+  <div class="instructions story" >
+    <markdown [src]="'/assets/story/e-1.md'"></markdown>
   </div>
+  <app-next-button (click)="nextStage()" ></app-next-button>
+</div>
 <div class="puzzle" *ngIf="stage == 1">
   <div class="instructions">
     <p>Work together to build a bridge out of Mega Blocks that is at least 60cm long. See how many Hot Wheels cars it will hold. It must hold the weight of at least 10 cars.</p>
   </div>
-
-  <app-next-button (click)="nextStage()" ></app-next-button>
+  <div>
+    <app-next-button back="true" (click)="prevStage()" ></app-next-button>
+    <app-next-button (click)="nextStage()" ></app-next-button>
+  </div>
 </div>
+
 <div class="puzzle" *ngIf="stage == 2">
   <div class="instructions">
-    <p>Next Puzzle Location: Inside a toy truck</p>
-    <p>What is the next code?</p>
+    <p *ngIf="home">Next Puzzle Location: Inside a toy truck</p>
+    <p *ngIf="!home">Password for next puzzle: How can you keep a door shut? </p>
+    <p>What is the password?</p>
   </div>
   <input class="puzzle-input" #code  (keyup.enter)="testCode(code.value)">
-
-  <app-next-button (click)="testCode(code.value)"></app-next-button>
+  <div>
+    <app-next-button back="true" (click)="prevStage()" ></app-next-button>
+    <app-next-button (click)="testCode(code.value)"></app-next-button>
+  </div>
 </div>

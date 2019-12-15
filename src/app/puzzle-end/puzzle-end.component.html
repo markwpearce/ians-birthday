@@ -1,14 +1,21 @@
 <div class="scene" *ngIf="stage == 0">
     <app-scene-img name="trapped"></app-scene-img>
 </div>
-<div class="puzzle" *ngIf="stage == 0">
-
-    <app-next-button (click)="nextStage()"></app-next-button>
+<div class="puzzle puzzle-story" *ngIf="stage == 0">
+  <div class="instructions story" >
+    <markdown [src]="'/assets/story/end-1.md'"></markdown>
   </div>
+  <app-next-button (click)="nextStage()" ></app-next-button>
+</div>
+
   <div class="scene" *ngIf="stage == 1">
       <app-scene-img name="news"></app-scene-img>
   </div>
-  <div class="puzzle" *ngIf="stage == 1">
+  <div class="puzzle puzzle-story" *ngIf="stage == 1">
+    <div class="instructions story" >
+      <markdown [src]="'/assets/story/end-2.md'"></markdown>
+    </div>
+    <app-next-button back="true" (click)="prevStage()" ></app-next-button>
       <div class="title-container">
           <h1 class="bangers title-effect">THE END!</h1>
         </div>

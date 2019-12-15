@@ -1,25 +1,33 @@
 <div class="scene">
-    <app-scene-img name="museum-interior"></app-scene-img>
+  <app-scene-img name="museum-interior"></app-scene-img>
+</div>
+<div class="puzzle puzzle-story" *ngIf="stage == 0">
+  <div class="instructions story" >
+    <markdown [src]="'/assets/story/d-1.md'"></markdown>
   </div>
-  <div class="puzzle" *ngIf="stage == 0">
-
-      <app-next-button (click)="testInput(directions.value)" ></app-next-button>
-    </div>
+  <app-next-button (click)="nextStage()" ></app-next-button>
+</div>
   <div class="puzzle" *ngIf="stage == 1">
     <div class="instructions">
       <p>What are the directions Thea should use for the Metamouse?</p>
-      <p class="small">Use the map to find the directions to Grandfather William’s house</p>
+      <p class="small">Use the map to find the directions to Grandfather William’s house from the museum.</p>
+      <p class="small"><a href="/assets/printables/new-mouse-city-map.pdf" target="_blank">New Mouse City Map [PDF]</a></p>
     </div>
-    <input class="puzzle-input" #directions  (keyup.enter)="testInput(directions.value)">
-
-    <app-next-button (click)="testInput(directions.value)" ></app-next-button>
+    <input class="puzzle-input" #directions (keyup.enter)="testInput(directions.value)">
+    <div>
+      <app-next-button back="true" (click)="prevStage()" ></app-next-button>
+      <app-next-button (click)="testInput(directions.value)" ></app-next-button>
+    </div>
   </div>
-  <div class="puzzle" *ngIf="stage == 2">
-    <div class="instructions">
-      <p>Next Puzzle Location:  Under a chair</p>
-      <p>What is the next code?</p>
-    </div>
-    <input class="puzzle-input" #code  (keyup.enter)="testCode(code.value)">
-
+<div class="puzzle" *ngIf="stage == 2">
+  <div class="instructions">
+    <p *ngIf="home">Next Puzzle Location: Under a chair</p>
+    <p *ngIf="!home">Password for next puzzle: What kind of heavy machine is used for lifting things high in the air?</p>
+    <p>What is the password?</p>
+  </div>
+  <input class="puzzle-input" #code  (keyup.enter)="testCode(code.value)">
+  <div>
+    <app-next-button back="true" (click)="prevStage()" ></app-next-button>
     <app-next-button (click)="testCode(code.value)"></app-next-button>
   </div>
+</div>

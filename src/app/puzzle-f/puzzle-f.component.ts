@@ -13,5 +13,6 @@ export class PuzzleFComponent extends PuzzleBase {
     this.setPuzzle('f');
     this.possible1 = [4, 9, 5];
     this.possible2 = [495];
+    this.alternatePasswords = ['robots', 'droids'];
   }
 }

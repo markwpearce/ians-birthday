@@ -6,6 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./next-button.component.scss']
 })
 export class NextButtonComponent implements OnInit {
+  @Input()
+  back = false;
+
+  @Input()
+  reset = false;
+
   constructor() {}
 
   ngOnInit() {}

@@ -1,31 +1,41 @@
 <div class="scene" *ngIf="stage == 0">
     <app-scene-img name="museum"></app-scene-img>
 </div>
-<div class="puzzle" *ngIf="stage == 0">
-
-    <app-next-button (click)="testCode(code.value)"></app-next-button>
+<div class="puzzle puzzle-story" *ngIf="stage == 0">
+  <div class="instructions story" >
+    <markdown [src]="'/assets/story/b-1.md'"></markdown>
   </div>
+  <app-next-button (click)="nextStage()" ></app-next-button>
+</div>
 <div class="puzzle" *ngIf="stage == 1">
-    <div class="instructions">
-      <p>In 5 minutes, try to make the best copy of Cheesy Night as possible. We’ll vote on the best one and they’ll get a prize!
-        </p>
-    </div>
-    <app-next-button (click)="testCode(code.value)"></app-next-button>
+  <div class="instructions">
+    <p>In 5 minutes, try to make the best copy of <i>Cheesy Night</i> as possible.</p>
   </div>
+  <div>
+    <app-next-button back="true" (click)="prevStage()" ></app-next-button>
+    <app-next-button (click)="nextStage()" ></app-next-button>
+  </div>
+</div>
 
 <div class="painting-container" *ngIf="stage == 2">
   <img class="painting space" src="/assets/cheesy-night.jpg">
-  <app-next-button (click)="nextStage()"></app-next-button>
+  <div>
+    <app-next-button back="true" (click)="prevStage()" ></app-next-button>
+    <app-next-button (click)="nextStage()" ></app-next-button>
+  </div>
 </div>
 <div class="scene" *ngIf="stage == 3">
     <app-scene-img name="museum"></app-scene-img>
 </div>
 <div class="puzzle" *ngIf="stage == 3">
   <div class="instructions">
-    <p>Next Puzzle Location:  Where you would find real cheese?</p>
-    <p>What is the next code?</p>
+    <p *ngIf="home">Next Puzzle Location:  Where you would find real cheese?</p>
+    <p *ngIf="!home">Password for next puzzle: What do you call it if you're wearing sunglasses and a fake moustache?</p>
+    <p>What is the password?</p>
   </div>
   <input class="puzzle-input" #code  (keyup.enter)="testCode(code.value)">
-
-  <app-next-button (click)="testCode(code.value)"></app-next-button>
+  <div>
+    <app-next-button back="true" (click)="prevStage()" ></app-next-button>
+    <app-next-button (click)="testCode(code.value)"></app-next-button>
+  </div>
 </div>

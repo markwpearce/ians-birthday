@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { MarkdownModule } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PuzzleAComponent } from './puzzle-a/puzzle-a.component';
@@ -20,6 +20,7 @@ import { PuzzleFComponent } from './puzzle-f/puzzle-f.component';
 import { PuzzleGComponent } from './puzzle-g/puzzle-g.component';
 import { PuzzleEndComponent } from './puzzle-end/puzzle-end.component';
 import { RobotMazeComponent } from './robot-maze/robot-maze.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,13 @@ import { RobotMazeComponent } from './robot-maze/robot-maze.component';
     PuzzleEndComponent,
     RobotMazeComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, CommonModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    CommonModule,
+    HttpClientModule,
+    MarkdownModule.forRoot({ loader: HttpClient })
+  ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [PuzzleAComponent],

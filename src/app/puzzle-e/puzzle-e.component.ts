@@ -11,5 +11,6 @@ export class PuzzleEComponent extends PuzzleBase {
   constructor(puzzleState: PuzzleStateService) {
     super(puzzleState);
     this.setPuzzle('e');
+    this.alternatePasswords = ['lock'];
   }
 }

@@ -1,3 +1,5 @@
 <div class="button-container">
-  <i class="fas fa-chevron-circle-right fa-5x title-color"></i>
+  <i *ngIf="!back && !reset" class="fas fa-chevron-circle-right fa-5x title-color" ></i>
+  <i *ngIf="back" class="fas fa-chevron-circle-left fa-5x title-color" ></i>
+  <i *ngIf="reset" class="fas fa-times-circle fa-5x title-color" ></i>
 </div>

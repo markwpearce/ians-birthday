@@ -7,6 +7,9 @@ export class PuzzleBase implements OnInit {
   puzzleData: PuzzleDetail;
   possible1: number[];
   possible2: number[];
+  alternatePasswords: string[] = [];
+
+  home = false;
 
   constructor(protected puzzleState: PuzzleStateService) {}
 
@@ -21,6 +24,9 @@ export class PuzzleBase implements OnInit {
 
   nextStage() {
     this.stage++;
+  }
+  prevStage() {
+    this.stage--;
   }
 
   testInput(directions: string) {
@@ -41,7 +47,11 @@ export class PuzzleBase implements OnInit {
   }
 
   testCode(code: string) {
-    if (code.trim().toLowerCase() === this.puzzleData.code) {
+    code = code.trim().toLowerCase();
+    if (
+      code === this.puzzleData.code ||
+      (this.alternatePasswords && this.alternatePasswords.includes(code))
+    ) {
       this.puzzleState.triggerCorrectAnswer();
       this.puzzleState.solveCurrentPuzzle();
     } else {

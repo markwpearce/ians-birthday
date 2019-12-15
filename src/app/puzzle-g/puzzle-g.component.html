@@ -1,18 +1,29 @@
 <div class="scene" *ngIf="stage == 0">
    <app-scene-img  name="geronimo-and-crunchrat"></app-scene-img>
 </div>
-<div class="puzzle" *ngIf="stage == 0">
+<div class="puzzle puzzle-story" *ngIf="stage == 0">
+  <div class="instructions story" >
+    <markdown [src]="'/assets/story/g-1.md'"></markdown>
+  </div>
   <app-next-button (click)="nextStage()" ></app-next-button>
 </div>
+
 <div class="scene" *ngIf="stage == 1">
     <app-scene-img  name="ben-pad-max"></app-scene-img>
  </div>
- <div class="puzzle" *ngIf="stage == 1">
-   <app-next-button (click)="nextStage()" ></app-next-button>
- </div>
- <div class="scene" *ngIf="stage == 2 || stage ==3">
-    <app-robot-maze #maze (programResult)="mazeResult($event)"></app-robot-maze>
- </div>
+ <div class="puzzle puzzle-story" *ngIf="stage == 1">
+    <div class="instructions story" >
+      <markdown [src]="'/assets/story/g-2.md'"></markdown>
+    </div>
+    <div>
+      <app-next-button back="true" (click)="prevStage()" ></app-next-button>
+      <app-next-button (click)="nextStage()" ></app-next-button>
+    </div>
+</div>
+
+<div class="scene" *ngIf="stage == 2 || stage ==3">
+  <app-robot-maze #maze (programResult)="mazeResult($event)"></app-robot-maze>
+</div>
  <div class="puzzle" *ngIf="stage == 2">
     <div class="instructions">
         <p>Program the robot so it can reach the painting. You can give it three kinds of commands:</p>
@@ -24,17 +35,23 @@
       </div>
 
       <input class="puzzle-input" #directions  (keyup.enter)="testInput(directions.value)">
-
-      <app-next-button (click)="testInput(directions.value)" ></app-next-button>
+      <div>
+        <app-next-button back="true" (click)="prevStage()" ></app-next-button>
+        <app-next-button reset="true" (click)="directions.value =''; resetMaze()" ></app-next-button>
+        <app-next-button (click)="testInput(directions.value)" ></app-next-button>
+      </div>
 </div>
 <div class="puzzle" *ngIf="stage == 3">
     <div class="instructions">
-      <p>Next Puzzle Location: In a room you build in</p>
-      <p>What is the next code?</p>
+      <p *ngIf="home">Next Puzzle Location: In a room you build in</p>
+      <p *ngIf="!home">Password for next puzzle: A mouse in a trap, or a fish on a hook? </p>
+      <p>What is the password?</p>
     </div>
     <input class="puzzle-input" #code  (keyup.enter)="testCode(code.value)">
-
-    <app-next-button (click)="testCode(code.value)"></app-next-button>
+    <div>
+      <app-next-button back="true" (click)="resetMaze();prevStage()" ></app-next-button>
+      <app-next-button (click)="testCode(code.value)"></app-next-button>
+    </div>
   </div>
 
 

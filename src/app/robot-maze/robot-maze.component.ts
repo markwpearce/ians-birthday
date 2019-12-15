@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
+import { ResolveEnd } from '@angular/router';
 
 const WALL = 1;
 const GOAL = 2;
@@ -7,6 +8,8 @@ export interface Point {
   x: number;
   y: number;
 }
+
+const moveTimeMs = 500;
 
 @Component({
   selector: 'app-robot-maze',
@@ -51,11 +54,11 @@ export class RobotMazeComponent implements OnInit {
 
   reset() {
     this.robot = this.start;
-
+    this.cdr.markForCheck();
     this.currentDirection = 0;
   }
 
-  programRobot(instructions: string[]): void {
+  async programRobot(instructions: string[]) {
     let ok = true;
 
     const op = instructions.shift();
@@ -67,7 +70,7 @@ export class RobotMazeComponent implements OnInit {
     } else {
       const spaces = parseInt(op, 10);
       if (!isNaN(spaces)) {
-        ok = this.move(spaces);
+        ok = await this.move(spaces);
       }
     }
     this.cdr.markForCheck();
@@ -77,23 +80,31 @@ export class RobotMazeComponent implements OnInit {
       } else if (instructions.length > 0) {
         setTimeout(() => {
           this.programRobot(instructions);
-        }, 1000);
+        }, moveTimeMs);
       }
     } else {
       this.programResult.next(false);
     }
   }
 
-  move(spaces: number): boolean {
-    let ok = true;
-    while (spaces > 0) {
-      ok = this.move1();
-      if (!ok) {
-        break;
-      }
-      spaces--;
-    }
-    return ok;
+  async move(spaces: number): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (spaces > 0) {
+          const ok = this.move1();
+          this.cdr.markForCheck();
+          if (!ok) {
+            resolve(false);
+            return;
+          }
+          spaces--;
+          resolve(this.move(spaces));
+          return;
+        } else {
+          resolve(true);
+        }
+      }, moveTimeMs);
+    });
   }
 
   move1(): boolean {

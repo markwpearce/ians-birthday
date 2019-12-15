@@ -21,7 +21,7 @@ export class PuzzleStateService {
     { id: 'd', name: 'On The Chase', code: 'crane' },
     { id: 'e', name: 'Heavy Construction', code: 'padlock' },
     { id: 'f', name: 'Secret Codes', code: 'robot' },
-    { id: 'g', name: 'Trapped', code: 'captured' },
+    { id: 'g', name: 'Trapped!', code: 'captured' },
     { id: 'end', name: 'Crunchrat Caught' }
   ];
   private currentPuzzleIdx = 0;
@@ -33,7 +33,7 @@ export class PuzzleStateService {
 
   puzzleProgress$ = this.currentPuzzle$.pipe(
     map(() => {
-      return Array(this.numberOfPuzzles - 1)
+      return Array(this.numberOfPuzzles)
         .fill(false)
         .fill(true, 0, this.currentPuzzleIdx);
     })
