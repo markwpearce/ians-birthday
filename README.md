@@ -6,7 +6,11 @@ The idea is for teh kids at the party to play through an original Geronimo Stilt
 
 ## Screenshots
 
+![Start](https://raw.githubusercontent.com/markwpearce/ians-birthday/master/readme-images/start.png)
 
+![Start](https://raw.githubusercontent.com/markwpearce/ians-birthday/master/readme-images/a.png)
+
+![Start](https://raw.githubusercontent.com/markwpearce/ians-birthday/master/readme-images/g.png)
 
 
 ## Project
