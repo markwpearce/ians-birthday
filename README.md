@@ -1,27 +1,22 @@
-# IansBirthday
+# Ian's 7th Birthday
+
+This is a puzzle/activity/scavenger hunt game I made for my son Ian's 7th birthday party. He is an avid reader and is enjoying teh Geronimo Stilton books and tv show, and we had a Geronimo Stilton themed party.
+
+The idea is for teh kids at the party to play through an original Geronimo Stilton story, with different activities and puzzles that they need to solve to progress. When we played at home, the passwords to progress to th next "chapter" were hidden in different places in our house. Here the game is presented as if you need to answer riddles/questions to get the next password.
+
+## Screenshots
+
+
+
+
+## Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
-## Development server
+### Running locally
+
+Run `npm intall` or `yarn install` to install required files.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
