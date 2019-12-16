@@ -4,6 +4,8 @@ This is a puzzle/activity/scavenger hunt game I made for my son Ian's 7th birthd
 
 The idea is for teh kids at the party to play through an original Geronimo Stilton story, with different activities and puzzles that they need to solve to progress. When we played at home, the passwords to progress to th next "chapter" were hidden in different places in our house. Here the game is presented as if you need to answer riddles/questions to get the next password.
 
+*[Play the game here!](https://markwpearce.github.io/ians-birthday/game)*
+
 ## Screenshots
 
 ![Start](https://raw.githubusercontent.com/markwpearce/ians-birthday/master/readme-images/start.png)
