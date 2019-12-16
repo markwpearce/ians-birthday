@@ -3,7 +3,7 @@
 </div>
 <div class="puzzle puzzle-story" *ngIf="stage == 0">
   <div class="instructions story" >
-    <markdown [src]="'/assets/story/b-1.md'"></markdown>
+    <markdown [src]="'assets/story/b-1.md'"></markdown>
   </div>
   <app-next-button (click)="nextStage()" ></app-next-button>
 </div>
@@ -18,7 +18,7 @@
 </div>
 
 <div class="painting-container" *ngIf="stage == 2">
-  <img class="painting space" src="/assets/cheesy-night.jpg">
+  <img class="painting space" src="assets/cheesy-night.jpg">
   <div>
     <app-next-button back="true" (click)="prevStage()" ></app-next-button>
     <app-next-button (click)="nextStage()" ></app-next-button>

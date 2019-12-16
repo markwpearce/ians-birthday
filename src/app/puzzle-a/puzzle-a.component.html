@@ -3,7 +3,7 @@
 </div>
 <div class="puzzle puzzle-story" *ngIf="stage == 0">
   <div class="instructions story" >
-    <markdown [src]="'/assets/story/a-1.md'"></markdown>
+    <markdown [src]="'assets/story/a-1.md'"></markdown>
   </div>
   <app-next-button (click)="nextStage()" ></app-next-button>
 </div>
@@ -11,7 +11,7 @@
   <div class="instructions">
     <p>What are the directions Thea should use for the Metamouse to get to the museum, and stopping at Thea's house along the way?</p>
     <p class="small">Directions are based on jumping from building to building with the shortest distance based on the number on the map. For example, going from The Mouse House Restaurant (28) to Botanical Gardens (19), the directions are 28, 27, 19.</p>
-    <p class="small"><a href="/assets/printables/new-mouse-city-map.pdf" target="_blank">New Mouse City Map [PDF]</a></p>
+    <p class="small"><a href="assets/printables/new-mouse-city-map.pdf" target="_blank">New Mouse City Map [PDF]</a></p>
   </div>
   <input class="puzzle-input" #directions  (keyup.enter)="testInput(directions.value)">
   <div>

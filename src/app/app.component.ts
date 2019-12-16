@@ -27,7 +27,7 @@ export class AppComponent {
 
   playSound(sound: string) {
     const audio = new Audio();
-    audio.src = `/assets/sound/${sound}.wav`;
+    audio.src = `assets/sound/${sound}.wav`;
     audio.load();
     audio.play();
   }

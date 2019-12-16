@@ -3,7 +3,7 @@
 </div>
 <div class="puzzle puzzle-story" *ngIf="stage == 0">
   <div class="instructions story" >
-    <markdown [src]="'/assets/story/end-1.md'"></markdown>
+    <markdown [src]="'assets/story/end-1.md'"></markdown>
   </div>
   <app-next-button (click)="nextStage()" ></app-next-button>
 </div>
@@ -13,7 +13,7 @@
   </div>
   <div class="puzzle puzzle-story" *ngIf="stage == 1">
     <div class="instructions story" >
-      <markdown [src]="'/assets/story/end-2.md'"></markdown>
+      <markdown [src]="'assets/story/end-2.md'"></markdown>
     </div>
     <app-next-button back="true" (click)="prevStage()" ></app-next-button>
       <div class="title-container">

@@ -15,7 +15,7 @@ export class SceneImgComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     (document.querySelector(
       '.fill'
-    ) as HTMLElement).style.backgroundImage = `url("/assets/scene/${this.fileName}")`;
+    ) as HTMLElement).style.backgroundImage = `url("assets/scene/${this.fileName}")`;
   }
 
   get fileName(): string {

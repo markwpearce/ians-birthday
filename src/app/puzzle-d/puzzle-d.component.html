@@ -3,7 +3,7 @@
 </div>
 <div class="puzzle puzzle-story" *ngIf="stage == 0">
   <div class="instructions story" >
-    <markdown [src]="'/assets/story/d-1.md'"></markdown>
+    <markdown [src]="'assets/story/d-1.md'"></markdown>
   </div>
   <app-next-button (click)="nextStage()" ></app-next-button>
 </div>
@@ -11,7 +11,7 @@
     <div class="instructions">
       <p>What are the directions Thea should use for the Metamouse?</p>
       <p class="small">Use the map to find the directions to Grandfather William’s house from the museum.</p>
-      <p class="small"><a href="/assets/printables/new-mouse-city-map.pdf" target="_blank">New Mouse City Map [PDF]</a></p>
+      <p class="small"><a href="assets/printables/new-mouse-city-map.pdf" target="_blank">New Mouse City Map [PDF]</a></p>
     </div>
     <input class="puzzle-input" #directions (keyup.enter)="testInput(directions.value)">
     <div>

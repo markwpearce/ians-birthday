@@ -3,14 +3,14 @@
 </div>
 <div class="puzzle puzzle-story" *ngIf="stage == 0">
   <div class="instructions story" >
-    <markdown [src]="'/assets/story/f-1.md'"></markdown>
+    <markdown [src]="'assets/story/f-1.md'"></markdown>
   </div>
   <app-next-button (click)="nextStage()" ></app-next-button>
 </div>
 <div class="puzzle" *ngIf="stage == 1">
   <div class="instructions">
     <p>Find the books with the red paw prints. Look for the code papers, and see if you can understand the code. Once you have it, try to open the locked door!</p>
-    <p class="small"><a href="/assets/printables/library-code.pdf" target="_blank">Three secret code papers [PDF]</a></p>
+    <p class="small"><a href="assets/printables/library-code.pdf" target="_blank">Three secret code papers [PDF]</a></p>
   </div>
 
   <input class="puzzle-input" #directions  (keyup.enter)="testInput(directions.value)">
