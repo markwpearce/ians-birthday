@@ -2,7 +2,7 @@
 
 This is a puzzle/activity/scavenger hunt game I made for my son Ian's 7th birthday party. He is an avid reader and is enjoying teh Geronimo Stilton books and tv show, and we had a Geronimo Stilton themed party.
 
-The idea is for teh kids at the party to play through an original Geronimo Stilton story, with different activities and puzzles that they need to solve to progress. When we played at home, the passwords to progress to th next "chapter" were hidden in different places in our house. Here the game is presented as if you need to answer riddles/questions to get the next password.
+The idea is for the kids at the party to play through an original Geronimo Stilton story, with different activities and puzzles that they need to solve to progress. When we played at home, the passwords to progress to the next "chapter" were hidden in different places in our house. Here the game is presented as if you need to answer riddles/questions to get the next password.
 
 *[Play the game here!](https://markwpearce.github.io/ians-birthday/game)*
 
